@@ -1,0 +1,58 @@
+{
+  "order": 0,
+  "template": "user-*",
+  "settings": {
+    "index": {
+      "number_of_shards": "1",
+      "number_of_replicas": "1"
+    }
+  },
+  "mappings": {
+    "_default_": {
+      "dynamic_templates": [
+        {
+          "timestampFields": {
+            "match_pattern": "regex",
+            "mapping": {
+              "format": "strict_date_optional_time||epoch_millis",
+              "index": "not_analyzed",
+              "type": "date"
+            },
+            "match": "^.*[Tt]imestamp.*$"
+          }
+        },
+        {
+          "stringFields": {
+            "mapping": {
+              "index": "not_analyzed"
+            },
+            "match_mapping_type": "string"
+          }
+        },
+        {
+          "idFields": {
+            "mapping": {
+              "index": "not_analyzed",
+              "type": "string"
+            },
+            "match_pattern": "regex",
+            "match": "^[iI]d$|.*Id$"
+          }
+        },
+        {
+          "phoneAsString": {
+            "mapping": {
+              "index": "not_analyzed",
+              "type": "string"
+            },
+            "match": "phoneNumber"
+          }
+        }
+      ]
+    }
+  },
+  "aliases": {
+    "user-in": {},
+    "user-out": {}
+  }
+}
