@@ -1,0 +1,67 @@
+{
+  "type": "task",
+  "data": [
+    {
+      "siteId": "1",
+      "createdById": "1001490",
+      "name": "Do this",
+      "number": 0,
+      "legacy": {
+        "assignedToList": [],
+        "published": false
+      },
+      "createdTimestamp": "2017-07-10T13:48:20-07:00",
+      "assignedToIdList": [
+        "1001490"
+      ],
+      "modifiedById": "1001490",
+      "modifiedTimestamp": "2017-07-10T00:00:00.000Z",
+      "deletedTimestamp": null,
+      "targetTimestamp": "2017-07-10T00:00:00.000Z",
+      "completedTimestamp": "2017-07-10T00:00:00.000Z",
+      "background": "string",
+      "requiredActions": "string",
+      "expenditureBudget": 0,
+      "hoursBudget": 0,
+      "budgetApprovalRequired": false,
+      "hasIncentive": false,
+      "subsystemId": "100",
+      "statusId": "1",
+      "priorityId": "1",
+      "sourceId": "1",
+      "energyImpactId": "3",
+      "effortId": "1"
+    },
+    {
+      "siteId": "1",
+      "createdById": "1001490",
+      "name": "Do that",
+      "number": 0,
+      "legacy": {
+        "assignedToList": [],
+        "published": false
+      },
+      "createdTimestamp": "2017-07-10T13:48:20-07:00",
+      "assignedToIdList": [
+        "1001490"
+      ],
+      "modifiedById": "1001490",
+      "modifiedTimestamp": "2017-07-10T00:00:00.000Z",
+      "deletedTimestamp": null,
+      "targetTimestamp": "2017-07-10T00:00:00.000Z",
+      "completedTimestamp": "2017-07-10T00:00:00.000Z",
+      "background": "string",
+      "requiredActions": "string",
+      "expenditureBudget": 0,
+      "hoursBudget": 0,
+      "budgetApprovalRequired": false,
+      "hasIncentive": false,
+      "subsystemId": "102",
+      "statusId": "1",
+      "priorityId": "1",
+      "sourceId": "1",
+      "energyImpactId": "3",
+      "effortId": "1"
+    }
+  ]
+}

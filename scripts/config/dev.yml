@@ -1,2 +1,2 @@
 elasticsearch:
-  host: localhost:9200
+  host: developer.mark.energysensei.info:9200

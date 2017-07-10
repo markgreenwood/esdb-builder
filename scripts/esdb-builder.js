@@ -11,6 +11,10 @@ const argOptions = [
 ];
 const args = commandLineArgs(argOptions);
 
+if (args['dry-run']) {
+   args.verbose = true;
+}
+
 const esClient = new es.Client(R.pick(['host'], config.get('elasticsearch')));
 
 const indexName = R.propOr('', 'indexname', args);
@@ -30,7 +34,14 @@ const dataBlob = require(`./data/${indexName}-data`);
 const indexSettings = require(`./index-templates/${indexName}-template`);
 
 const bulkRequest = bulkRequestBuilder(dataBlob.type)(dataBlob.data);
-console.log(bulkRequest);
+
+if (args.verbose) {
+  console.log(bulkRequest);
+}
+
+if (args['dry-run']) {
+  process.exit(0);
+}
 
 // TODO: give the option of deleting the current index or adding to it
 esClient.indices.delete({ index: esIndex }, () =>

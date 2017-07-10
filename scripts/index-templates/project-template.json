@@ -1,0 +1,110 @@
+{
+  "order": 0,
+  "template": "project-*",
+  "settings": {
+    "index": {
+      "number_of_shards": "1",
+      "number_of_replicas": "1"
+    }
+  },
+  "mappings": {
+    "_default_": {
+      "dynamic_templates": [
+        {
+          "stringFields": {
+            "mapping": {
+              "index": "not_analyzed"
+            },
+            "match_mapping_type": "string"
+          }
+        },
+        {
+          "idFields": {
+            "mapping": {
+              "index": "not_analyzed",
+              "type": "string"
+            },
+            "match_pattern": "regex",
+            "match": "^[iI]d$|.*Id$"
+          }
+        },
+        {
+          "timestampFields": {
+            "mapping": {
+              "index": "not_analyzed",
+              "format": "strict_date_optional_time||epoch_millis",
+              "type": "date"
+            },
+            "match_pattern": "regex",
+            "match": "^.*[Tt]imestamp.*$"
+          }
+        },
+        {
+          "nameFields": {
+            "mapping": {
+              "index": "analyzed",
+              "type": "string"
+            },
+            "match": "name"
+          }
+        }
+      ]
+    },
+    "attribute-value": {
+      "properties": {
+        "isActive": {
+          "index": "not_analyzed",
+          "type": "boolean"
+        },
+        "description": {
+          "index": "not_analyzed",
+          "type": "string"
+        },
+        "sortValue": {
+          "index": "not_analyzed",
+          "type": "long"
+        }
+      }
+    },
+    "task": {
+      "properties": {
+        "background": {
+          "index": "analyzed",
+          "type": "string"
+        },
+        "requiredActions": {
+          "index": "analyzed",
+          "type": "string"
+        },
+        "assignedToIdList": {
+          "index": "not_analyzed",
+          "type": "string"
+        },
+        "expenditureBudget": {
+          "type": "double"
+        },
+        "budgetApprovalRequired": {
+          "type": "boolean"
+        },
+        "hoursBudget": {
+          "type": "double"
+        },
+        "hasIncentive": {
+          "type": "boolean"
+        },
+        "legacy": {
+          "type": "object",
+          "properties": {
+            "assignedToList": { "type": "string" },
+            "number": { "type": "long" },
+            "published": { "type": "boolean" }
+          }
+        }
+      }
+    }
+  },
+  "aliases": {
+    "project-in": {},
+    "project-out": {}
+  }
+}
