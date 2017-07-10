@@ -18,7 +18,6 @@ const esIndex = indexName === '' ? null : R.concat(indexName, '-' + process.env.
 
 console.log(`Creating index ${esIndex}`);
 
-// TODO: What happens if item.id is undefined/null?
 const bulkRequestBuilder = type =>
   R.compose(
     R.flatten,
@@ -30,7 +29,6 @@ const bulkRequestBuilder = type =>
 const dataBlob = require(`./data/${indexName}-data`);
 const indexSettings = require(`./index-templates/${indexName}-template`);
 
-// TODO: abstract 'type' here
 const bulkRequest = bulkRequestBuilder(dataBlob.type)(dataBlob.data);
 console.log(bulkRequest);
 
