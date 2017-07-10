@@ -1,0 +1,47 @@
+{
+  "type":"user",
+  "data":[
+    {
+      "userId":1,
+      "username":"mark.greenwood",
+      "email":"mark@email.com",
+      "createdBy":"1001490",
+      "createdTimestamp":"2017-07-07T22:11:38.145Z",
+      "firstName":"Mark",
+      "lastName":"Greenwood",
+      "jobTitle":"Software Engineer",
+      "location":"PDX",
+      "notes":"",
+      "theme":"sensei",
+      "license":{
+        "name":"sensei",
+        "version":"",
+        "accepted":true
+      },
+      "phoneNumber":"xxx.xxx.xxxx",
+      "userLevel":0,
+      "modifiedTimestamp":"2017-07-07T22:11:38.148Z"
+    },
+    {
+      "userId":2,
+      "username":"star.lord",
+      "email":"peterq@gotg.net",
+      "createdBy":"1001490",
+      "createdTimestamp":"2017-07-10T22:11:38.145Z",
+      "firstName":"Peter",
+      "lastName":"Quill",
+      "jobTitle":"Scrum Master",
+      "location":"Terra",
+      "notes":"",
+      "theme":"sensei",
+      "license":{
+        "name":"sensei",
+        "version":"",
+        "accepted":true
+      },
+      "phoneNumber":"xxx.xxx.xxxx",
+      "userLevel":0,
+      "modifiedTimestamp":"2017-07-10T22:11:38.148Z"
+    }
+  ]
+}

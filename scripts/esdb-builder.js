@@ -27,11 +27,11 @@ const bulkRequestBuilder = type =>
     )
   );
 
-const data = require(`./data/${indexName}`);
-const indexSettings = require(`./index-templates/${indexName}`);
+const dataBlob = require(`./data/${indexName}-data`);
+const indexSettings = require(`./index-templates/${indexName}-template`);
 
 // TODO: abstract 'type' here
-const bulkRequest = bulkRequestBuilder('user')(data);
+const bulkRequest = bulkRequestBuilder(dataBlob.type)(dataBlob.data);
 console.log(bulkRequest);
 
 // TODO: give the option of deleting the current index or adding to it
